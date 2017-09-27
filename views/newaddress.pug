@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 New Address
+        h3#response
+        // post form
+        form(method='POST' action='/newaddress')
+          div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='name' name='name' required)
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='text', placeholder='email' name='email' required)
+          div.form-group
+            label(for='phone') Phone:
+            input#phone.form-control(type='text', placeholder='phone number' name='phone' required)
+          button.btn.btn-primary(type='submit') Add Address

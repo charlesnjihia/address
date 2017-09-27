@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Update Address
+        h3#response
+        // post form
+        form(method='POST' action='/updateaddress')
+          div.form-group
+            input(type='hidden',name='id' value=`${address._id}`)
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='name' name='name' value=`${address.name}` required)
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='text', placeholder='email' name='email' value=`${address.email}` required)
+          div.form-group
+            label(for='phone') Phone:
+            input#phone.form-control(type='text', placeholder='phone number' name='phone' value=`${address.phone}` required)
+          button.btn.btn-primary(type='submit') Update Address

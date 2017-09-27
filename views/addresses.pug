@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h5.display-4.m-b-2 All Addresses
+
+        div#outcont
+          hr
+          each address in addresses
+            h3= `Name: ${address.name}`
+            h4= `Email: ${address.email}`
+            h4= `Phone No: ${address.phone}`
+            a.btn.btn-primary(href=`/addresses/${address._id}`) edit 
+            a.btn.btn-primary(href=`/addresses/${address._id}/delete` style='margin-left:5px;') remove      
+            hr
+                   
